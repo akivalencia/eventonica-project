@@ -33,7 +33,7 @@ class Eventonica {
 
       
 
-       }
+       
     }
   
     findEventsbyCategory(category) {
@@ -45,7 +45,7 @@ class Eventonica {
       // Adds a new User
         let newUser= new User(id, first_name, last_name, email, category, password);
           // Adds a new Event
-        }
+        //}
       //pops the user from the array 
     }
   
