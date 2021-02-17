@@ -6,11 +6,16 @@ class Eventonica {
       // Adds a new Event
     }
     updateEvent(id, key, change) {
-        for (let i=0;i<Event.all_events.length; i++){
-           if (Event.all_events[i].id === id || Event.all_events[i].name=== name) {
-               event.all_events[i].key = change;
-           }
-        }
+        // // for (let i=0;i <Event.all_events.length; i++){
+        //    if (Event.all_events[i].id === id) {
+        //        Event.all_events[i].key = change;
+        //    }
+        let index= Event.all_events.map(event=> event.id).indexOf(id);
+        // console.log(Event.all_events.map(event=>event.id));
+        // console.log(index);
+         Event.all_events[index][key] = change;
+
+
       // Update existing Event
       //search id 
       //value 
@@ -21,7 +26,7 @@ class Eventonica {
   
     deleteEvent(id) {
       // Deletes Event
-      for (let i=0; i<Event.all_users.length; i++) {
+      for (let i=0; i<Event.all_events.length; i++) {
         if (Event.all_events[i].id === id){
          Event.all_events.splice(i,1);// getting rid of that and only that ith element
 
@@ -48,7 +53,7 @@ class Eventonica {
       //use filter method
     }
   
-    addUser(id) {
+    addUser(id, first_name, last_name, email, category, password) {
       // Adds a new User
         let newUser= new User(id, first_name, last_name, email, category, password);
           // Adds a new Event
@@ -73,17 +78,6 @@ class Eventonica {
         }
       }   
     }
-
-
-    favoriteEvent() {
-        //favoritesEvent
-    }
-
-    unfavoriteEvent() {
-        //undoes the favoriteEvent method
-    }
-
-
 
 
 
@@ -133,14 +127,15 @@ class Eventonica {
   }
 
 
-
+//damn should really make a jasmine test instead of just doing this
 //testing code 
 event = new Eventonica();
 event.addEvent('abc', '09/28/2021', 'brie','something', 'party');
 console.log(event);
-event.updateEvent(100,'title', 'def');
+event.updateEvent(100, 'title', 'def');
 console.log(event);
-
+console.log(Event.all_events);
+event.addUser();
 // //can create categories in general whether it's favorite or not
 //  class Category{
 //     constructor(){
