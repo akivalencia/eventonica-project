@@ -1,9 +1,16 @@
 class Eventonica {
     addEvent(title, date, organizer, description, category) {
     let newEvent= new Event(title, date, organizer, description, category);
+    console.log(newEvent);
+
       // Adds a new Event
     }
-    updateEvent(id, name, key, change) {
+    updateEvent(id, key, change) {
+        for (let i=0;i<Event.all_events.length; i++){
+           if (Event.all_events[i].id === id || Event.all_events[i].name=== name) {
+               event.all_events[i].key = change;
+           }
+        }
       // Update existing Event
       //search id 
       //value 
@@ -16,7 +23,7 @@ class Eventonica {
       // Deletes Event
       for (let i=0; i<Event.all_users.length; i++) {
         if (Event.all_events[i].id === id){
-         Event.all_events.splice(i,1);// what truly is this splice shit doing 
+         Event.all_events.splice(i,1);// getting rid of that and only that ith element
 
        }
      }   
@@ -45,8 +52,6 @@ class Eventonica {
       // Adds a new User
         let newUser= new User(id, first_name, last_name, email, category, password);
           // Adds a new Event
-        //}
-      //pops the user from the array 
     }
   
     updateUser(id, name, key, change) {
@@ -77,6 +82,8 @@ class Eventonica {
     unfavoriteEvent() {
         //undoes the favoriteEvent method
     }
+
+
 
 
 
@@ -124,6 +131,15 @@ class Eventonica {
       User.all_users.push(this); // keep track of all created instances
     }
   }
+
+
+
+//testing code 
+event = new Eventonica();
+event.addEvent('abc', '09/28/2021', 'brie','something', 'party');
+console.log(event);
+event.updateEvent(100,'title', 'def');
+console.log(event);
 
 // //can create categories in general whether it's favorite or not
 //  class Category{
