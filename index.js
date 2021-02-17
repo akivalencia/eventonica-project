@@ -1,7 +1,8 @@
 class Eventonica {
+//add a fieldset per parameter so people can add all of these
     addEvent(title, date, organizer, description, category) {
     let newEvent= new Event(title, date, organizer, description, category);
-    console.log(newEvent);
+    // console.log(newEvent);
 
       // Adds a new Event
     }
@@ -42,6 +43,7 @@ class Eventonica {
       //event.all_event[i]["date"] ; the date key/ property
       //if event.all_event[i]["date"]=== date 
     //   return item ;
+    // '09/28/2021'
 
       
 
@@ -53,6 +55,7 @@ class Eventonica {
       //use filter method
     }
   
+
     addUser(id, first_name, last_name, email, category, password) {
       // Adds a new User
         let newUser= new User(id, first_name, last_name, email, category, password);
@@ -118,7 +121,7 @@ class Eventonica {
       this.first_name= first_name;
       this.last_name= last_name;
       this.email= email;
-      this.category= category;
+    //   this.category= category;
       this.password= password;
 
       // decide what properties are required on an instance
