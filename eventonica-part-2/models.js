@@ -32,13 +32,15 @@ class Eventonica {
     
       deleteEvent(id) {
         // Deletes Event
-        for (let i=0; i<Event.all_events.length; i++) {
-          if (Event.all_events[i].id === id){
-           Event.all_events.splice(i,1);// getting rid of that and only that ith element
+        let index= Event.all_events.map(event=> event.id).indexOf(id);
+        if(index<0){
+          console.log("This event is not in the system yet");
+        }else {
+            Event.all_events.splice(index,1);// what truly is this splice shit doing 
   
-         }
-       }   
-     }
+          }
+        }   
+        
   
     
       findEventsByDate(date) {
@@ -56,7 +58,7 @@ class Eventonica {
     
       findEventsbyCategory(category) {
         // Return items in Event.all with a specified category
-        //use filter method
+        return Event.findByCategory(category);
       }
     
   
@@ -83,17 +85,19 @@ class Eventonica {
     
       deleteUser(id) {
         // Deletes User
-      for (let i=0; i<User.all_users.length; i++) {
-           if (User.all_users[i].id === id){
-            User.all_users.splice(i,1);// what truly is this splice shit doing 
+        let index= User.all_users.map(user=> user.id).indexOf(id);
+        if(index<0){
+          console.log("This user is not in the system yet");
+        }else {
+            User.all_users.splice(index,1);// what truly is this splice shit doing 
   
           }
         }   
-      }
+      
   
   
   
-    }
+    }//end of the eventonica class
     
     class Event {
       static all_events = [];
@@ -114,9 +118,17 @@ class Eventonica {
         return [];
       }
     
-      static findByCategory() {
-        return [];
+      static findByCategory(category) {
+        let categories=[];
+        for (let i=0; i<this.all_events.length; i++){
+          if (this.all_events[i].category===category){
+            categories.push(this.all[i])
+          }
+        }
+        return categories;
       }
+
+
     }
     
     class User {
