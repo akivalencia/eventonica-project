@@ -44,7 +44,6 @@ class Eventonica {
       //if event.all_event[i]["date"]=== date 
     //   return item ;
     // '09/28/2021'
-
       
 
        
@@ -56,19 +55,24 @@ class Eventonica {
     }
   
 
-    addUser(id, first_name, last_name, email, category, password) {
+    addUser(first_name, last_name, email) {
       // Adds a new User
-        let newUser= new User(id, first_name, last_name, email, category, password);
+        let newUser= new User(first_name, last_name, email);
           // Adds a new Event
     }
   
-    updateUser(id, name, key, change) {
+    updateUser(id, key, change) {
         // Update existing Event
         //search id 
         //value 
         //change key 
         //change value --> key value pairs 
         //map or filter methods 
+        let index= User.all_users.map(user=> user.id).indexOf(id);
+        // console.log(Event.all_events.map(event=>event.id));
+        // console.log(index);
+         User.all_users[index][key] = change;
+
 
     }
   
@@ -116,13 +120,13 @@ class Eventonica {
   
 
 
-    constructor() {
+    constructor(first_name, last_name, email) {
       this.id = User._nextId++;
       this.first_name= first_name;
       this.last_name= last_name;
       this.email= email;
     //   this.category= category;
-      this.password= password;
+      // this.password= password;
 
       // decide what properties are required on an instance
       User.all_users.push(this); // keep track of all created instances

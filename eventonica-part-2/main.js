@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Builds HTML list for all event. You must call this function after you
   // change, add, or remove any events.
   const refreshEventsList = () => {
-    document.querySelector("#events-list").innerHTML = Event.all
+    document.querySelector("#events-list").innerHTML = Event.all_events
       .map((event) => `<li>${event.name}</li>`)
       .join("\n");
   };
