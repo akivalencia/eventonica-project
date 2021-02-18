@@ -7,7 +7,7 @@ class Eventonica {
   //add a fieldset per parameter so people can add all of these
       addEvent(title, date, organizer, description, category) {
       let newEvent= new Event(title, date, organizer, description, category);
-      // console.log(newEvent);
+       console.log(newEvent);
   
         // Adds a new Event
       }
@@ -161,7 +161,7 @@ class Eventonica {
   //damn should really make a jasmine test instead of just doing this
   //testing code 
   event = new Eventonica();
-  event.addEvent('abc', '09/28/2021', 'brie','something', 'party');
+  console.log(event.addEvent('abc', '09/28/2021', 'brie','something', 'party'));
   console.log(event);
   event.updateEvent(100, 'title', 'def');
   console.log(event);
