@@ -51,6 +51,7 @@ class Eventonica {
         //if event.all_event[i]["date"]=== date 
       //   return item ;
       // '09/28/2021'
+      return Event.findByDate(date);
         
   
          
@@ -114,15 +115,21 @@ class Eventonica {
         Event.all_events.push(this); // keep track of all created instances
       }
     
-      static findByDate() {
-        return [];
+      static findByDate(date) {
+        let dates=[];
+        for (let i=0; i<this.all_events.length; i++){
+          if(this.all_events[i].date=== date){
+            dates.push(this.all_events[i])
+          }
+        }
+        return dates;
       }
     
       static findByCategory(category) {
         let categories=[];
         for (let i=0; i<this.all_events.length; i++){
           if (this.all_events[i].category===category){
-            categories.push(this.all[i])
+            categories.push(this.all_events[i])
           }
         }
         return categories;
@@ -139,7 +146,7 @@ class Eventonica {
   
       constructor(first_name, last_name, email) {
         this.id = User._nextId++;
-        this.first_name= first_name;
+        this.first_name = first_name;
         this.last_name= last_name;
         this.email= email;
       //   this.category= category;
