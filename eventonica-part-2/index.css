@@ -7,6 +7,7 @@ header {
   /* For more about flexbox, see https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
   display: flex;
   align-items: center;
+  background-color: #222831
 }
 
 header img {
@@ -27,4 +28,9 @@ footer {
   margin-top: 1rem;
   font-size: small;
   color: gray;
+  background-color: #00adb5;
+}
+body {
+  background-color: whitesmoke;
+
 }

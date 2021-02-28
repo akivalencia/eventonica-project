@@ -36,7 +36,7 @@ class Eventonica {
         if(index<0){
           console.log("This event is not in the system yet");
         }else {
-            Event.all_events.splice(index,1);// what truly is this splice shit doing 
+            Event.all_events= Event.all_events.splice(index,1);//  
   
           }
         }   
@@ -90,7 +90,7 @@ class Eventonica {
         if(index<0){
           console.log("This user is not in the system yet");
         }else {
-            User.all_users.splice(index,1);// what truly is this splice shit doing 
+             User.all_users.splice(index,1);// what truly is this splice shit doing 
   
           }
         }   
@@ -144,10 +144,9 @@ class Eventonica {
     
   
   
-      constructor(first_name, last_name, email) {
+      constructor(name, email) {
         this.id = User._nextId++;
-        this.first_name = first_name;
-        this.last_name= last_name;
+        this.name = name;
         this.email= email;
       //   this.category= category;
         // this.password= password;
@@ -166,7 +165,11 @@ class Eventonica {
   event.updateEvent(100, 'title', 'def');
   console.log(event);
   console.log(Event.all_events);
-  event.addUser();
+  event.addUser('Yajaira');
+  event.addUser('Brittany');
+  event.addUser('Tanisha');
+  event.addUser('Kuma');
+  console.log(User.all_users);
   // //can create categories in general whether it's favorite or not
   //  class Category{
   //     constructor(){
@@ -175,6 +178,17 @@ class Eventonica {
   
   //  }
   
+  new Event('Example event');
+  new User('Alex');
+
+
+
+
+
+
+
+
+
 
 if (typeof module !== "undefined") {
   module.exports = { Eventonica, User, Event };

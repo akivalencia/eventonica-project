@@ -10,30 +10,44 @@ document.addEventListener("DOMContentLoaded", () => {
   // change, add, or remove any events.
   const refreshEventsList = () => {
     document.querySelector("#events-list").innerHTML = Event.all_events
-      .map((event) => `<li>${event.title}</li>`)
+      .map((event) => `<li>${event.title}, ${event.date} ${event.id}</li>`)
       .join("\n");
   };
 
 //for users list
-  const refreshEventsList2 = () => {
+  const refreshUsersList = () => {
     document.querySelector("#users-list").innerHTML = User.all_users
-      .map((user) => `<li>${user.first_name, user.last_name}</li>`)
+      .map((user) => `<li>${user.name}, ${user.id}</li>`)
       .join("\n");
   };
 
   const addUserForm = document.querySelector("#add-user");
   addUserForm.addEventListener("submit", (submitEvent) => {
     submitEvent.preventDefault();
-    const first_name = document.querySelector("#add-user-name").value;
-    const last_name = document.querySelector("#add-event-date").value;
-    const organizer = document.querySelector("#add-event-organizer").value;
+    const name = document.querySelector("#add-user-name").value;
+    const email = document.querySelector("#add-user-email").value;
     //grab above
 
 
-    const user = app.addUser(first_name, last_name, email);
+    const user = app.addUser(name, email);
     console.log("Added user", user);
-    refreshEventsList();
+    refreshUsersList();
     addUserForm.reset();
+
+  });
+//delete
+  const deleteUserForm = document.querySelector("#delete-user");
+  deleteUserForm.addEventListener("submit", (submitEvent) => {
+    submitEvent.preventDefault();
+    const id = document.querySelector("#delete-user-id").value;
+    //grab above
+
+
+    const user = app.deleteUser(id);
+    alert("delete user"+ user);
+    refreshUsersList();
+    deleteUserForm.reset();
+
   });
 
 
@@ -56,4 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     refreshEventsList();
     addEventForm.reset();
   });
+
+  
 });
