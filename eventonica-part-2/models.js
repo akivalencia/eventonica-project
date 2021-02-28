@@ -32,11 +32,13 @@ class Eventonica {
     
       deleteEvent(id) {
         // Deletes Event
+        id = parseInt(id);
         let index= Event.all_events.map(event=> event.id).indexOf(id);
+        console.log('will delete this'+ index);
         if(index<0){
           console.log("This event is not in the system yet");
         }else {
-            Event.all_events= Event.all_events.splice(index,1);//  
+            Event.all_events.splice(index,1);//  
   
           }
         }   
@@ -86,6 +88,8 @@ class Eventonica {
     
       deleteUser(id) {
         // Deletes User
+        //id is a string so must make into a num 
+        id= parseInt(id);
         let index= User.all_users.map(user=> user.id).indexOf(id);
         if(index<0){
           console.log("This user is not in the system yet");

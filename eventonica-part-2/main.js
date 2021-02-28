@@ -50,6 +50,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
+  //delete event
+  const deleteEventForm = document.querySelector("#delete-event");
+  deleteEventForm.addEventListener("submit", (submitEvent) => {
+    submitEvent.preventDefault();
+    const id = document.querySelector("#delete-event-id").value;
+    //grab above
+
+
+    const event = app.deleteEvent(id);
+    alert("delete event"+ event);
+    refreshEventsList();
+    deleteEventForm.reset();
+
+  });
+
 
 
 
