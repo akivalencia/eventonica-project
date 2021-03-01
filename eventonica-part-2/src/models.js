@@ -163,17 +163,17 @@ class Eventonica {
   
   //damn should really make a jasmine test instead of just doing this
   //testing code 
-  event = new Eventonica();
-  console.log(event.addEvent('abc', '09/28/2021', 'brie','something', 'party'));
-  console.log(event);
-  event.updateEvent(100, 'title', 'def');
-  console.log(event);
-  console.log(Event.all_events);
-  event.addUser('Yajaira');
-  event.addUser('Brittany');
-  event.addUser('Tanisha');
-  event.addUser('Kuma');
-  console.log(User.all_users);
+  // event = new Eventonica();
+  // console.log(event.addEvent('abc', '09/28/2021', 'brie','something', 'party'));
+  // console.log(event);
+  // event.updateEvent(100, 'title', 'def');
+  // console.log(event);
+  // console.log(Event.all_events);
+  // event.addUser('Yajaira');
+  // event.addUser('Brittany');
+  // event.addUser('Tanisha');
+  // event.addUser('Kuma');
+  // console.log(User.all_users);
   // //can create categories in general whether it's favorite or not
   //  class Category{
   //     constructor(){
@@ -182,8 +182,8 @@ class Eventonica {
   
   //  }
   
-  new Event('Example event');
-  new User('Alex');
+  // new Event('Example event');
+  // new User('Alex');
 
 
 
