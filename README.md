@@ -5,4 +5,6 @@ This project is a clone of Eventbrite. By the end of the Techtonica program, thi
 
 Techtnologies used: NodeJS, ExpressJS, React 
 
-![picture of progress](https://github.com/akivalencia/eventonica-project/eventonica.png?raw=true)
+![picture of progress](https://github.com/akivalencia/eventonica-project/blob/main/eventonica.png)
+
+
