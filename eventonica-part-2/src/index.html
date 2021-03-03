@@ -42,7 +42,7 @@
                 <input
                   type="date"
                   id="add-event-date"
-                  placeholder="MM-DD-YYYY"
+                  placeholder="YYYY-MM-DD"
                 />
               </fieldset>
               <fieldset>
@@ -135,12 +135,25 @@
               <input type="text" id="date-search" placeholder="YYYY-MM-DD" />
             </fieldset>
             <fieldset>
-              <label for="category-search">Category</label>
-              <input type="text" id="category-search" />
+              <label for="category-search"> Choose a category:</label>
+              <!-- <input type="text" id="category-search" /> -->
+              <select name="categories" id="categories">
+                //case sensitive
+                <option value="study">study</option>
+                <option value="fun">fun</option>
+                <option value="party">party</option>
+                <option value="networking">networking</option>
+              </select>
+              <br><br>
             </fieldset>
 
             <input type="submit" value="Search" />
           </form>
+          <ul id="find-events-list">
+            <!-- Display all searched Events here -->
+            <li>...</li>
+          </ul>
+
         </div>
       </aside>
     </main>

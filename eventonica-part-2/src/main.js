@@ -1,10 +1,23 @@
 /**
+ * d
  * Add all your DOM event handlers and other UI code in this file.
  */
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   // Use this to call all the logic we already created
   const app = new Eventonica();
+  app.addEvent('abc', '09/28/2021', 'brie','something', 'party');
+  app.addUser('Yajaira');
+  app.addUser('Brittany');
+  app.addUser('Tanisha');
+  app.addUser('Kuma');
+
+
+
+
 
   // Builds HTML list for all event. You must call this function after you
   // change, add, or remove any events.
@@ -13,13 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
       .map((event) => `<li>${event.title}, ${event.date} ${event.id}</li>`)
       .join("\n");
   };
-
+  refreshEventsList();
 //for users list
   const refreshUsersList = () => {
     document.querySelector("#users-list").innerHTML = User.all_users
       .map((user) => `<li>${user.name}, ${user.id}</li>`)
       .join("\n");
   };
+  refreshUsersList();
 
   const addUserForm = document.querySelector("#add-user");
   addUserForm.addEventListener("submit", (submitEvent) => {
@@ -35,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addUserForm.reset();
 
   });
-//delete
+//delete user
   const deleteUserForm = document.querySelector("#delete-user");
   deleteUserForm.addEventListener("submit", (submitEvent) => {
     submitEvent.preventDefault();
@@ -66,8 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-
-
   const addEventForm = document.querySelector("#add-event");
 
   // Handle add event form submit by calling our instance of Eventonica, `app`
@@ -85,6 +97,70 @@ document.addEventListener("DOMContentLoaded", () => {
     refreshEventsList();
     addEventForm.reset();
   });
+
+  //search event by date 
+
+  // const refreshFindEventsList = (event) => {
+  //   document.querySelector("#find-events-list").innerHTML = event
+  //     .map((event) => `<li>${event.title}, ${event.date} ${event.id}</li>`)
+  //     .join("\n");
+  // };
+  // const SearchEventForm = document.querySelector("#search");
+
+  // // Handle add event form submit by calling our instance of Eventonica, `app`
+  //   SearchEventForm.addEventListener("submit", (submitEvent) => {
+  //   submitEvent.preventDefault();
+
+  //date 
+  //   const date= document.querySelector("#date-search").value;
+  //   // const category = document.querySelector("#category-search").value;
+  //   //grab above
+    
+  //   const event = app.findEventsByDate(date);
+  //   // console.log("Added event", event);
+  //   refreshFindEventsList(event);
+  //   SearchEventForm.reset();
+  // });
+
+
+
+
+  //search event by category
+  const refreshFindEventsList = (event) => {
+    document.querySelector("#find-events-list").innerHTML = event
+      .map((event) => `<li>${event.title}, ${event.date} ${event.id}</li>`)
+      .join("\n");
+  };
+   const SearchEventForm = document.querySelector("#search");
+
+  // Handle add event form submit by calling our instance of Eventonica, `app`
+    SearchEventForm.addEventListener("submit", (submitEvent) => {
+    submitEvent.preventDefault();
+    const date= document.querySelector("#date-search").value;
+    const category = document.querySelector("#categories").value;
+    console.log(category);
+    //grab above
+    
+    const event = app.findEventsbyCategoryandDate(category, date);
+    console.log(event);
+    // console.log("Added event", event);
+    refreshFindEventsList(event);
+    SearchEventForm.reset();
+
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
 });

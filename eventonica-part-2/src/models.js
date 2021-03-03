@@ -63,6 +63,17 @@ class Eventonica {
         // Return items in Event.all with a specified category
         return Event.findByCategory(category);
       }
+
+      findEventsbyCategoryandDate(category, date){
+        let categorylist= Event.findByCategory(category); //return list with same event category
+        console.log(categorylist);
+        let filtered= categorylist.filter( (filterItem) => filterItem.date === date)
+        console.log(filtered);
+        return filtered;
+
+      }
+
+
     
   
       addUser(first_name, last_name, email) {
