@@ -197,14 +197,10 @@ class Eventonica {
   // new User('Alex');
 
 
-
-
-
-
-
+  let alex= new User('Alex');
 
 
 
 if (typeof module !== "undefined") {
-  module.exports = { Eventonica, User, Event };
+  module.exports = { Eventonica, User, Event, alex };
 }
