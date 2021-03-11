@@ -1,15 +1,15 @@
-# eventonica-project
+# eventonica-project#
 
 About: 
 This project is a clone of Eventbrite. By the end of the Techtonica program, this will be full-stack application. Techtnologies used: NodeJS, ExpressJS, React 
 
-Files: 
+#Files#
 -models.js functions/logic
 -main.js DOM manipulation
 -index.html skeleton
 -index.js -- express server 
 
-Dependencies: 
+##Dependencies##
 
 *Must have NPM and Homebrew* 
 To install express: npm install express --save
