@@ -21,7 +21,12 @@ This project is a clone of Eventbrite. By the end of the Techtonica program, thi
 - `npm install pg-promise`
 - `npx create-react-app eventonica`
 
+### Tests 
+- (unit tests)jasmine tests test Event and User methods in part 2 
+- (integration tests) run Mocha and supertest (will update with tests) 
 
+
+### picture of eventonica part 2 
 
 ![picture of progress](https://github.com/akivalencia/eventonica-project/blob/main/eventonica.png)
 
