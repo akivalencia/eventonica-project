@@ -9,7 +9,13 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//postgres client 
+const pgp = require('pg-promise')(/* options */);
+//connect express server to postgres db 
+const db = pgp('postgres://localhost:5432/eventonica');
 
+
+//port
 const port= process.env.PORT || 3000;
 
 app.listen(port, () => {
