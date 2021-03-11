@@ -1,20 +1,22 @@
 # eventonica-project
 
+About: 
+This project is a clone of Eventbrite. By the end of the Techtonica program, this will be full-stack application. Techtnologies used: NodeJS, ExpressJS, React 
 
-
-This project is a clone of Eventbrite. By the end of the Techtonica program, this will be full-stack application. 
-
+Files: 
 -models.js functions/logic
 -main.js DOM manipulation
 -index.html skeleton
+-index.js -- express server 
 
+Dependencies: 
 
-index.js -- express server 
-
-Techtnologies used: NodeJS, ExpressJS, React 
-
-*Must have NPM* 
+*Must have NPM and Homebrew* 
 To install express: npm install express --save
+Install PostgresSQL Client to connect to database:
+brew install postgres 
+To be able to connect to database:
+npm install pg-promise
 
 
 
