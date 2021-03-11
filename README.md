@@ -15,7 +15,8 @@ This project is a clone of Eventbrite. By the end of the Techtonica program, thi
 - Install PostgresSQL Client to connect to database:
 - brew install postgres 
 - To be able to connect to database:
-- npm install pg-promise
+- `npm install pg-promise`
+- `npx create-react-app eventonica`
 
 
 
