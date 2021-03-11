@@ -3,6 +3,9 @@
 ## About
 This project is a clone of Eventbrite. By the end of the Techtonica program, this will be full-stack application. Techtnologies used: NodeJS, ExpressJS, React 
 
+### Navigation 
+- Run the app by using an IDE and running index.js. Otherwise cd into part-6 and then src folder then in the command line, run “node index.js” . If the server runs it should print “Server running on port 3000…” 
+
 ### Files
 - models.js functions/logic
 - main.js DOM manipulation
