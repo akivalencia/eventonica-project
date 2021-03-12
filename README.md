@@ -13,7 +13,6 @@ This project is a clone of Eventbrite. By the end of the Techtonica program, thi
 - index.js -- express server 
 
 ### Dependencies
-- Must have NPM and Homebrew
 - The project depends on a running PostgreSQL server, this is how you install PostgreSQL
 - `brew install postgres`
 - Create React application scaffolding: 
