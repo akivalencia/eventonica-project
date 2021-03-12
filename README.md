@@ -14,12 +14,14 @@ This project is a clone of Eventbrite. By the end of the Techtonica program, thi
 
 ### Dependencies
 - Must have NPM and Homebrew
-- To install express: `npm install express --save`
-- Install PostgresSQL Client to connect to database:
+- The project depends on a running PostgreSQL server, this is how you install PostgreSQL
 - `brew install postgres`
-- To be able to connect to database:
-- `npm install pg-promise`
+- Create React application scaffolding: 
 - `npx create-react-app eventonica`
+
+-node server side dependencies you need to install:
+- `npm install pg-promise`
+- `npm install express --save`
 
 ### Tests 
 - (unit tests)jasmine tests test Event and User methods in part 2 
